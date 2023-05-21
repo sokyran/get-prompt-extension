@@ -1,0 +1,155 @@
+@font-face {
+  font-family: 'FixelText';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url(/fonts/FixelText-ExtraLight.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'FixelText';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/fonts/FixelText-Light.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'FixelText';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/FixelText-Regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'FixelText';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/fonts/FixelText-Medium.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'FixelText';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/fonts/FixelText-SemiBold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'FixelText';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/fonts/FixelText-Bold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'FixelText';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url(/fonts/FixelText-ExtraBold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'FixelText';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url(/fonts/FixelText-Black.woff2) format('woff2');
+}
+
+.popup.image-wizard {
+  font-family: 'FixelText', sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  min-width: 350px;
+  max-width: 470px;
+  display: none;
+  color: black;
+  z-index: 99999;
+  box-shadow: 0px 4px 11px 7px rgba(50, 50, 50, 0.25);
+  border-radius: 11px;
+}
+
+.image-wizard .close {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.image-wizard .top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 10px 0;
+  cursor: move;
+}
+
+.image-wizard .content {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  padding: 11px;
+}
+
+.image-wizard .logo {
+  border-radius: 50%;
+}
+
+.image-wizard .text-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 20px;
+}
+
+.image-wizard .text {
+  font-size: 18px;
+  font-weight: 500;
+  white-space: break-spaces;
+}
+
+.image-wizard .button-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.image-wizard .copy-button {
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F5F5;
+  border-radius: 7px;
+  padding: 8px;
+  margin-right: 6px;
+  width: 36px;
+  cursor: pointer;
+}
+
+.image-wizard .open-button {
+  background: #F5F5F5;
+  border-radius: 7px;
+  padding: 8px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.image-wizard .open-icon {
+  transform: scale(1.5) translateY(1px);
+  margin-left: auto;
+}

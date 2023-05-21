@@ -1,0 +1,32 @@
+{
+  "description": "Get a prompt for selected image",
+  "manifest_version": 2,
+  "name": "Get Prompt!",
+  "version": "1.0",
+  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/borderify",
+  "icons": {
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "scripts": [
+      "browser-polyfill.js",
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [ "https://*/*" ],
+      "js": [
+        "browser-polyfill.js",
+        "content.js"
+      ],
+      "css": ["content.css"]
+    }
+  ],
+  "permissions": [ "activeTab", "contextMenus", "scripting", "webRequest" ],
+  "web_accessible_resources": [
+    "images/*",
+    "fonts/*"
+  ]
+}
