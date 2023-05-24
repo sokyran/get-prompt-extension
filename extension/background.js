@@ -20,9 +20,7 @@ browser.contextMenus.onClicked.addListener((info) => {
 
     portFromCS.postMessage({ type: "openPopup" });
 
-    // https://image-prompting-server-tqjpqri67a-lz.a.run.app
-
-    return fetch('http://127.0.0.1:8080/describe', {
+    return fetch('https://image-prompting-server-tqjpqri67a-lz.a.run.app/describe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
