@@ -12,16 +12,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*/*"],
+      "matches": ["https://*/*", "http://*/*"],
       "js": ["content.js"],
       "css": ["content.css"]
     }
   ],
   "permissions": ["contextMenus"],
-  "host_permissions": [
-    "https://*/*",
-    "http://*/*"
-  ],
   "web_accessible_resources": [{ 
     "resources": [
       "images/*",
