@@ -28,7 +28,6 @@ browser.contextMenus.onClicked.addListener((info) => {
         body: JSON.stringify({url: info.srcUrl})
       })
       .then((response) => {
-        console.log('here');
         response.json().then((data) => {
           return portFromCS.postMessage({ type: "finish", value: data.value });
         });
