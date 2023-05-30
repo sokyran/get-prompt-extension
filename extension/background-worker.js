@@ -1,20 +1,20 @@
-browser.contextMenus.create({
+chrome.contextMenus.create({
   id: "click-img",
   title: "What the prompt?",
   contexts: ["image"],
 },
-  () => void browser.runtime.lastError,
+  () => void chrome.runtime.lastError,
 );
 
 let portFromCS;
 
-function connected(p) {
-  portFromCS = p;
+function connected(port) {
+  portFromCS = port;
 }
 
-browser.runtime.onConnect.addListener(connected);
+chrome.runtime.onConnect.addListener(connected);
 
-browser.contextMenus.onClicked.addListener((info) => {
+chrome.contextMenus.onClicked.addListener((info) => {
   if (info.menuItemId === "click-img") {
     console.log('clicked on image', info.srcUrl);
 

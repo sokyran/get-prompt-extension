@@ -41,7 +41,7 @@ const main = () => {
     'But I\'m still trying my best...',
   ];
 
-  let myPort = browser.runtime.connect({ name: "port-from-cs" });
+  let myPort = chrome.runtime.connect({ name: "port-from-cs" });
 
   myPort.onMessage.addListener((m) => {
     if (m.type === "finish") {
@@ -82,10 +82,10 @@ const main = () => {
   popup.classList.add("popup");
   popup.classList.add("image-wizard");
 
-  const imgSrc = browser.runtime.getURL("images/wizard.png");
-  const closeIcon = browser.runtime.getURL("images/close-icon.svg");
-  const copyIcon = browser.runtime.getURL("images/copy-icon.svg");
-  const openIcon = browser.runtime.getURL("images/open-icon.svg");
+  const imgSrc = chrome.runtime.getURL("images/wizard.png");
+  const closeIcon = chrome.runtime.getURL("images/close-icon.svg");
+  const copyIcon = chrome.runtime.getURL("images/copy-icon.svg");
+  const openIcon = chrome.runtime.getURL("images/open-icon.svg");
 
   popup.innerHTML = `
     <div class="top-bar">
