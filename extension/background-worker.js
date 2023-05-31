@@ -8,11 +8,11 @@ chrome.contextMenus.create({
 
 let portFromCS;
 
-function connected(port) {
+function onConnected(port) {
   portFromCS = port;
 }
 
-chrome.runtime.onConnect.addListener(connected);
+chrome.runtime.onConnect.addListener(onConnected);
 
 chrome.contextMenus.onClicked.addListener((info) => {
   if (info.menuItemId === "click-img") {
