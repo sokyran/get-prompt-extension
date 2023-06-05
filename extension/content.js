@@ -102,8 +102,8 @@ const main = () => {
           <button id="copy-text" class="copy-button">
             <img src=${copyIcon} alt="Copy" />
           </button>
-          <button id="open-midj" class="open-button">
-            Try prompt in Midjourney
+          <button id="open-imagewizard" class="open-button">
+            Try prompt in Image Wizard
             <img src=${openIcon} class="open-icon" alt="" />
           </button>
         </div>
@@ -118,9 +118,10 @@ const main = () => {
     popup.style.display = "none";
   });
 
-  const openMidj = document.querySelector("#open-midj");
-  openMidj.addEventListener('click', function () {
-    window.open("https://discord.com/channels/662267976984297473/1008571209685925920");
+  const openWizard = document.querySelector("#open-imagewizard");
+  openWizard.addEventListener('click', function () {
+    const resultText = document.querySelector("#resultText");
+    window.open(`imagewizard://?prompt=${resultText.textContent}`);
   });
 
   const copyText = document.querySelector("#copy-text");
