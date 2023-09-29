@@ -44,37 +44,38 @@ const main = () => {
   let myPort = chrome.runtime.connect({ name: "port-from-cs" });
 
   myPort.onMessage.addListener((m) => {
+    const resultText = document.querySelector("#resultText");
+    const loadingText = document.querySelector("#loadingText");
+
     if (m.type === "finish") {
       isFinished = true;
-
-      console.log('got image url', m.value);
-
       clearInterval(interval);
-
-      const resultText = document.querySelector("#resultText");
-      const loadingText = document.querySelector("#loadingText");
 
       loadingText.textContent = "";
       resultText.textContent = m.value;
     } else if (m.type === "error") {
-      console.log('got error', m.value);
-      text.textContent = m.value;
+      clearInterval(interval);
+
+      loadingText.textContent = m.value;
+      resultText.textContent = "";
     } else if (m.type === "openPopup") {
       popup.style.display = "block";
-      const text = document.querySelector("#loadingText");
-      const resultText = document.querySelector("#resultText");
 
-      text.textContent = "Loading...";
+      loadingText.textContent = "Loading...";
       resultText.textContent = "";
 
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         if (isFinished || loadingPhrases.length === 0) {
           clearInterval(interval);
           return;
         }
-        text.textContent = text.textContent + `\n${loadingPhrases.shift()}`;
+        loadingText.textContent = loadingText.textContent + `\n${loadingPhrases.shift()}`;
       }, 5000);
+    } else if (m.type = "timeout") {
+      clearInterval(interval);
 
+      loadingText.textContent = "It's taking a while, try reloading the page.";
+      resultText.textContent = "";
     }
   });
 
