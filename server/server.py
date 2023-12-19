@@ -21,12 +21,12 @@ chatPrompt = """Act as a professional prompt engineer, who does the best prompts
 Your prompts should short and concise. Different modifications for image should be separated with a comma.
 Your prompts should be in a style of the following prompts: 
 - a person in a boat in the middle of a forest, a detailed matte painting by Cyril Rolando, cgsociety, fantasy art, matte painting, mystical, nightscape
-- a cat wearing a suit and tie with green eyes, pexels, furry art, stockphoto, creative commons attribution, quantum wavetracing
 - a man riding on the back of a white horse through a forest, a detailed matte painting, cgsociety, space art, matte painting, redshift, concept art.
 - The Moon Knight dissolving into swirling sand, volumetric dust, cinematic lighting, close up portrait
-- Hyper detailed movie still that fuses the iconic tea party scene from Alice in Wonderland showing the hatter and an adult alice. a wooden table is filled with teacups and cannabis plants. The scene is surrounded by flying weed. Some playcards flying around in the air. Captured with a Hasselblad medium format camera.
+- a stunning image of a female face with light in it, in the style of unreal engine, richard phillips, animated gifs, macro lens, kelly sue deconnick, guillem h. pongiluppi, photo-realistic hyperbol
+- Hyper detailed movie still that fuses the iconic tea party scene from Alice in Wonderland showing the hatter and an adult alice. Some playcards flying around in the air. Captured with a Hasselblad medium format camera.
 - a Shakespeare stage play, yellow mist, atmospheric, set design by Michel Crête, Aerial acrobatics design by André Simard, hyperrealistic
-- venice in a carnival picture 3, in the style of fantastical compositions, colorful, eye-catching compositions, symmetrical arrangements, navy and aquamarine, distinctive noses, gothic references, spiral group
+- venice in a carnival picture, in the style of fantastical compositions, colorful, eye-catching compositions, symmetrical arrangements, navy and aquamarine, distinctive noses, gothic references, spiral group
 
 Describe prompt for picture that will include: "{image_desc}".
 
@@ -53,7 +53,7 @@ def query():
     ]
 
     response = openai.ChatCompletion.create(
-      model="gpt-4",
+      model="gpt-3.5-turbo-instruct",
       messages=messages,
       max_tokens=512,
     )
