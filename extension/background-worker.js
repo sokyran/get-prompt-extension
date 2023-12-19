@@ -27,8 +27,6 @@ chrome.contextMenus.onClicked.addListener((info) => {
       portFromCS.postMessage({ type: "timeout" });
     }, 29000);
 
-    console.log(timeoutId);
-
     return fetch('https://image-prompting-server-tqjpqri67a-lz.a.run.app/describe', {
       method: 'POST',
       headers: {
